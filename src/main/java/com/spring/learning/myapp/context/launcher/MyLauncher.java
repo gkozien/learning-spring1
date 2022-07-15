@@ -1,7 +1,7 @@
-package com.spring.learning.mypp.context.launcher;
+package com.spring.learning.myapp.context.launcher;
 
-import com.spring.learning.mypp.context.seleniumconfig.SeleniumBrowserTestsConfiguration;
-import com.spring.learning.mypp.context.utils.ContextBuilder;
+import com.spring.learning.myapp.context.config.SeleniumBrowserTestsConfiguration;
+import com.spring.learning.myapp.context.utils.ContextBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;

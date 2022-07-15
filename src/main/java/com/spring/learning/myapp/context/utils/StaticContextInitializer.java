@@ -1,4 +1,4 @@
-package com.spring.learning.mypp.context.utils;
+package com.spring.learning.myapp.context.utils;
 
 public interface StaticContextInitializer
 {

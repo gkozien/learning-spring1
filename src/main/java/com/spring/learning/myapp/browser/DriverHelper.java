@@ -1,4 +1,4 @@
-package com.spring.learning.mypp.utils.selenium;
+package com.spring.learning.myapp.browser;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.github.bonigarcia.wdm.WebDriverManager;

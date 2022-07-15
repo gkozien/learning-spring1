@@ -1,7 +1,7 @@
-package com.spring.learning.mypp.context.seleniumconfig;
+package com.spring.learning.myapp.context.config;
 
-import com.spring.learning.mypp.pages.Page1;
-import com.spring.learning.mypp.utils.selenium.DriverHelper;
+import com.spring.learning.myapp.pages.Page1;
+import com.spring.learning.myapp.browser.DriverHelper;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FullyQualifiedAnnotationBeanNameGenerator;
 import org.springframework.context.annotation.Lazy;

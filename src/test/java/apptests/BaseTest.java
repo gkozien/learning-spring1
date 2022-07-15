@@ -1,7 +1,7 @@
-package testy;
+package apptests;
 
 import com.codeborne.selenide.Selenide;
-import com.spring.learning.mypp.context.launcher.MyLauncher;
+import com.spring.learning.myapp.context.launcher.MyLauncher;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;

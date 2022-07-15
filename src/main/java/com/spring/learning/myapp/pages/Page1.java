@@ -1,4 +1,4 @@
-package com.spring.learning.mypp.pages;
+package com.spring.learning.myapp.pages;
 
 import lombok.AllArgsConstructor;
 import org.openqa.selenium.By;

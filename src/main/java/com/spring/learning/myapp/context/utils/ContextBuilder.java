@@ -1,4 +1,4 @@
-package com.spring.learning.mypp.context.utils;
+package com.spring.learning.myapp.context.utils;
 
 import lombok.AccessLevel;
 import lombok.Setter;

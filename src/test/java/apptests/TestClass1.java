@@ -1,7 +1,7 @@
-package testy;
+package apptests;
 
-import com.spring.learning.mypp.pages.Page1;
-import com.spring.learning.mypp.utils.selenium.DriverHelper;
+import com.spring.learning.myapp.pages.Page1;
+import com.spring.learning.myapp.browser.DriverHelper;
 import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.Test;
 
