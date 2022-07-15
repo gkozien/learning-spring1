@@ -1,8 +1,8 @@
 package com.spring.learning.myapp.context.launcher;
 
-import com.spring.learning.myapp.context.config.SeleniumBrowserTestsConfiguration;
-import com.spring.learning.myapp.context.utils.ContextBuilder;
+import com.spring.learning.myapp.context.utils.ContextLoader;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
@@ -13,8 +13,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
-public class MyLauncher implements ParameterResolver {
+public class MyLauncher implements ParameterResolver, BeforeAllCallback {
     private AbstractApplicationContext context;
+
+    @Override
+    public void beforeAll(ExtensionContext extensionContext) {
+        context = ContextLoader.getInstance(extensionContext.getTestClass().get()).getApplicationContext();
+    }
 
     @Override
     public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) {
@@ -28,21 +33,8 @@ public class MyLauncher implements ParameterResolver {
 
     @Override
     public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        if (context == null) {
-            prepareContext(extensionContext.getTestClass().get());
-        }
         return context.getBean(parameterContext.getParameter()
                 .getType());
-    }
-
-    private void prepareContext(Class<?> testClass) {
-        log.info("building new context...");
-        context = new ContextBuilder()
-//                .activeProfiles(activeProfiles(env, testClass))
-                .beans(toMap(testClass.getName(), testClass))
-                .componentClasses(new Class<?>[]{SeleniumBrowserTestsConfiguration.class})
-                .initializeStaticContext(true)
-                .build();
     }
 
     private static <K, V> Map<K, V> toMap(K key, V value) {

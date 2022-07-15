@@ -32,17 +32,21 @@ public class ContextBuilder {
 
         if (null != activeProfiles) {
             context.getEnvironment()
-                .setActiveProfiles(activeProfiles);
+                    .setActiveProfiles(activeProfiles);
         }
         if (null != beans) {
             beans.forEach((beanName, beanClass) -> {
                 context.registerBean(beanName, beanClass);
                 context.getBeanDefinition(beanName)
-                    .setLazyInit(true);
+                        .setLazyInit(true);
             });
         }
-        if (null != componentClasses) { context.register(componentClasses); }
-        if (null != registerSingletonsMethod) { registerSingletonsMethod.accept(context); }
+        if (null != componentClasses) {
+            context.register(componentClasses);
+        }
+        if (null != registerSingletonsMethod) {
+            registerSingletonsMethod.accept(context);
+        }
         if (null != resolvableDependencies) {
             resolvableDependencies.forEach(context.getBeanFactory()::registerResolvableDependency);
         }

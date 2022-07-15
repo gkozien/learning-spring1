@@ -1,7 +1,7 @@
 package com.spring.learning.myapp.context.config;
 
-import com.spring.learning.myapp.pages.Page1;
 import com.spring.learning.myapp.browser.DriverHelper;
+import com.spring.learning.myapp.pages.Page1;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FullyQualifiedAnnotationBeanNameGenerator;
 import org.springframework.context.annotation.Lazy;
@@ -15,6 +15,5 @@ import org.springframework.context.annotation.Lazy;
 @Lazy
 public class SeleniumBrowserTestsConfiguration {
     public SeleniumBrowserTestsConfiguration() {
-        System.out.println("A");
     }
 }
